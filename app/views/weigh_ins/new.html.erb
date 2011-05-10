@@ -1,0 +1,8 @@
+<%= semantic_form_for @weigh_in do |form| %>
+<%= form.inputs do %>
+<% @weigh_in.display_fields.each do |name, field| -%>
+<%= form.input name, :required => false, :as => :number %>
+<% end -%>
+<% end -%>
+<%= form.buttons %>
+<% end %>

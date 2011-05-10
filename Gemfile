@@ -1,6 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
+gem "mongoid", "~> 2.0"
+gem "bson_ext"
+gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git"
+gem "inherited_resources"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

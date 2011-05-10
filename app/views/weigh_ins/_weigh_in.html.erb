@@ -1,0 +1,7 @@
+<li>
+  <ul>
+    <% weigh_in.display_fields.each do |name,field| -%>
+    <li><%= name %>: <%= weigh_in.send(:name) %></li>
+    <% end -%>
+  </ul>
+</li>

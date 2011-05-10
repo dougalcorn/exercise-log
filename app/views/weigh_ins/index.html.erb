@@ -1,0 +1,10 @@
+<h1>Weigh Ins</h1>
+
+<%= link_to "new", new_weigh_in_path %>
+
+<% if @weigh_ins -%>
+<ul>
+  <%= render :partial => "weigh_in", :collection => @weigh_ins %>
+</ul>
+<%#= will_paginate @weigh_ins %>
+<% end -%>
