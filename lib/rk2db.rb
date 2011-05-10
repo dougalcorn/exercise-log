@@ -11,7 +11,7 @@ menu_items = doc.css(".accordianCellContents .menuItem")
 puts "Found #{menu_items.size} activities"
 
 activity = { }
-activity["ID"] = doc.css(".menuItem.selected").first[:link][-8..-1]
+activity["RKID"] = doc.css(".menuItem.selected").first[:link][-8..-1]
 activity["Type"] = doc.css("#activityTypeText").first.content
 date_str = doc.css("#activityDateText").first.content
 activity["Date"] = date_str.gsub(/^\s*/,'').gsub(/::.*/,'').chomp
@@ -24,4 +24,11 @@ doc.css(".activityStatsItem").each do |elem|
 end
 activity["Notes"] = doc.css("#notes p").first.content.gsub(/\s+/,' ').gsub(/\s*$/,'')
 
-puts pp(activity)
+attrs = {}
+activity.each do |key,value| 
+  new_key = key.parameterize.underscore
+  attrs[new_key] = value
+end
+
+puts attrs.inspect
+puts Exercise.new(attrs).inspect

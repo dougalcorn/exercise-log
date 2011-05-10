@@ -1,4 +1,6 @@
 ExerciseLog::Application.routes.draw do
+  resources :exercises
+
   resources :weigh_ins
 
   # The priority is based upon order of creation:
